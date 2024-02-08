@@ -1,0 +1,14 @@
+main{
+    display: flex;
+    flex-direction: row;
+}
+
+.contentLayout{
+    margin-left: auto;
+    width: 630px;
+}
+
+.sideBarLayout{
+    margin-right: auto;
+    width: 370px;
+}
