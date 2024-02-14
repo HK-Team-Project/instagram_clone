@@ -4,15 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post</title>
-    <link rel="stylesheet" href="post_rec.css">
+    <link rel="stylesheet" href="post.css">
+    <script>
+        var user_id = `<a href="사용자 페이지"><span style="font-size: 14px; font-weight: bolder;">user_id_00</span></a>`
+    </script>
 </head>
 <body>
     <div class="post">
-        <div class="post_title">
-
+        <div class="post_user">
+            <div class="post_user_img">
+                <a href="사용자 페이지"><img src="1x1.png"></a>
+            </div>
+            <div>
+                <div>
+                    <script>
+                        document.write(user_id)
+                    </script>
+                    <span class="grey_text" style="font-size: 14px;">• <a href="사용자 페이지" class="grey_text"><script>'현재시간 - 게시시간'</script>(시간)</a></span>
+                </div>
+            </div>
+            <div class="post_user_options">
+                <img src="C:\Users\henry\Favorites\uos\coding\instagram_clone\public\assets\options.png">
+            </div>
         </div>
         <div class="post_img">
-            <img href="" style="width: 100%">
+            <img src="4x3.png" style="width: 100%">
+        </div>
+        <div class="post_share">
+            <div class="post_share_left">
+                <div>
+                    <img src="C:\Users\henry\Favorites\uos\coding\instagram_clone\public\assets\notifications.png" alt="">
+                </div>
+                <div>
+                    <img src="C:\Users\henry\Favorites\uos\coding\instagram_clone\public\assets\comments.png" alt="">
+                </div>
+                <div>
+                    <img src="C:\Users\henry\Favorites\uos\coding\instagram_clone\public\assets\messages.png" alt="">
+                </div>
+            </div>
+            <div class="post_share_right">
+                <div>
+                    <img src="C:\Users\henry\Favorites\uos\coding\instagram_clone\public\assets\save.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="post_like">
+            <script>
+                var like_list = ["1x1.png", "1x1.png"]
+                // var like_list = '팔로잉 중 좋아요 표시한 사람 최대 3명 프로필사진'
+                var len = like_list.length
+                if (len > 0) {
+                    document.write('<div class="post_like_img">')
+                    var i = 0
+                    while (i < len){
+                        document.write(`<img src="${like_list[i]}">`)
+                        i ++
+                    }
+                    document.write('</div>')
+                }
+            </script>
+            <div class="post_like_text" style="font-size: 14px; font-weight: bold;">
+                좋아요 <script>'좋아요 개수'</script>개
+            </div>
+        </div>
+        <div class="post_content">
+            <script>
+                document.write(user_id)
+            </script>
+            <script>
+                var content = `<span style="font-size: 14px;">Lorem ipsum dolor sit amet<br> consectetur adipisicing elit.<br> Minima sit placeat a consequatur<br> inventore dicta alias, fuga, eius minus<br> facere nostrum esse.<br> In repudiandae ut vel non,<br> quas consectetur! Culpa?</span>`
+                var index_1 = content.indexOf(">")
+                var index_2 = content.indexOf("<br>")
+                var first_line = `<span style="font-size: 14px;" class="post_content_first"${content.substring(index_1, index_2)}</span>`
+                document.write(first_line)
+            </script>
+            <span style="font-size: 14px;" class="post_content_showmore">...더보기</span>
+            <script>
+                function showmore(self) {
+                    document.querySelector(".post_content_first").remove()
+                    document.querySelector(".post_content_showmore").remove()
+                    document.querySelector(".post_content").innerHTML += content
+                }
+                document.querySelector(".post_content_showmore").addEventListener("click", showmore);
+            </script>
         </div>
     </div>
 </body>
