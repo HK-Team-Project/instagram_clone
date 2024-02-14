@@ -6,12 +6,12 @@ export default function Home() {
   const NavList = [
     { name: "home", iconSrc: "./assets/home.png", path: "/" },
     { name: "search", iconSrc: "./assets/search.png", path: "/" },
-    { name: "explore", iconSrc: "./assets/search.png", path: "/" },
+    { name: "explore", iconSrc: "./assets/explore.png", path: "/explore" },
     { name: "reels", iconSrc: "./assets/reels.png", path: "/" },
-    { name: "messages", iconSrc: "./assets/messages.ong", path: "/" },
+    { name: "messages", iconSrc: "./assets/messages.png", path: "/" },
     { name: "notifications", iconSrc: "./assets/notifications.png", path: "/" },
     { name: "notifications", iconSrc: "./assets/create.png", path: "/" },
-    { name: "profile", iconSrc: "", path: "/profile" },
+    { name: "profile", iconSrc: "./assets/profile.png", path: "/profile" },
   ];
 
   return (
@@ -33,6 +33,10 @@ export default function Home() {
               ></NavBox>
             );
           })}
+        </div>
+        <div>
+          <NavBox name="threads" iconSrc="./assets/threads.png" path="/"/>
+          <NavBox name="more" iconSrc="./assets/more.png" path="/"/>
         </div>
       </NavLayout>
       <MainLayout>
@@ -60,7 +64,7 @@ const HomeLayout = styled.div`
 `;
 
 const NavLayout = styled.nav`
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 
   padding: 10px 15px 10px 15px;
   display: grid;
@@ -73,9 +77,8 @@ const NavLayout = styled.nav`
 `;
 
 const MainLayout = styled.main`
-  border: 1px solid blue;
-
-  background-color: #faf7f7;
+  /* border: 1px solid blue; */
+  /* background-color: #faf7f7; */
   display: flex;
   flex-direction: row;
 `;
