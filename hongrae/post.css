@@ -1,0 +1,24 @@
+a {
+    color: black;
+    text-decoration: none;
+}
+.grey_text {
+    color: #888888;
+}
+
+.post {
+    width: 470px;
+}
+.post_img {
+    padding: 1px;
+}
+.post_title {
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+@media(max-width: 470px) {
+    .post {
+        width: 100%;
+    }
+}
