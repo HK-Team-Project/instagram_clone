@@ -40,55 +40,73 @@ export default function Home() {
         </div>
       </NavLayout>
       <MainLayout>
-        <ContentLayout />
+        <ContentLayout>
+          <StotyContainer>
+            <div style={{width:"60px", border: "1px solid red"}}>story</div>
+            <div style={{width:"60px", border: "1px solid red"}}>story</div>
+            <div style={{width:"60px", border: "1px solid red"}}>story</div>
+            <div style={{width:"60px", border: "1px solid red"}}>story</div>
+            <div style={{width:"60px", border: "1px solid red"}}>story</div>
+          </StotyContainer>
+          <FeedContainer>
+            {/* TODO: make Feed component and allocate to clickLister */}
+            <article style={{height:"700px", border:"1px solid green", margin: "0 80px 0 80px"}}>feed test</article>
+            <article style={{height:"700px", border:"1px solid green", margin: "0 80px 0 80px"}}>feed test</article>
+            <article style={{height:"700px", border:"1px solid green", margin: "0 80px 0 80px"}}>feed test</article>
+            <article style={{height:"700px", border:"1px solid green", margin: "0 80px 0 80px"}}>feed test</article>
+          </FeedContainer>
+        </ContentLayout>
         <AsideLayout />
       </MainLayout>
     </HomeLayout>
   );
 }
 
-// css part
 
 const HomeLayout = styled.div`
-  border: 1px solid blue;
-
-  height: 100%;
+  display:flex;
+  min-height: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
-  display: grid;
-  grid-template-columns: 240px 1fr;
 
-  @media screen and (max-width: 1270px) {
-    grid-template-columns: 60px 1fr;
-  }
+  /* background-color: #faf7f7; */
 `;
 
 const NavLayout = styled.nav`
-  /* border: 1px solid blue; */
-
-  padding: 10px 15px 10px 15px;
   display: grid;
+  position: fixed;
+  width: 240px;
+  height: 98%;
+  padding: 10px 15px 10px 15px;
   grid-template-rows: 92px 1fr 112px;
   border-right: 1px gray solid;
 
   @media screen and (max-width: 1275px) {
+    width: 30px;
     padding: 8px 12px 8px 12px;
   }
 `;
 
 const MainLayout = styled.main`
-  /* border: 1px solid blue; */
-  /* background-color: #faf7f7; */
+  min-height:inherit;
+  width: 100%;
+  margin-left:280px;
+
   display: flex;
   flex-direction: row;
+  @media screen and (max-width: 1275px) {
+    margin-left:60px;
+  }
 `;
 
 const ContentLayout = styled.div`
-  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
 
+  width: 630px;
+  border: 1px solid blue;
   margin-left: auto;
   margin-right: 30px;
-  width: 630px;
   @media screen and (max-width: 1100px) {
     margin-right: auto;
   }
@@ -112,4 +130,23 @@ const ImageBox = styled.div`
 const Image = styled.img`
   display: block;
   width: 60%;
+`;
+
+
+const StotyContainer = styled.div`
+  border: 1px solid blue;
+  padding-top:3px;
+  padding-bottom:3px;
+  width: 100%;
+  height: 100px;
+
+  display: flex;
+  flex-direction:row;
+`
+
+const FeedContainer = styled.div`
+  border: 1px solid blue;
+
+  display: flex;
+  flex-direction:column;
 `;
