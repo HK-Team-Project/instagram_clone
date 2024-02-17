@@ -4,6 +4,7 @@ import ProfileBox from "./ProfileBox";
 import SideBar from "./SideBar";
 import Footer from "./Footer";
 import Feed from "./Feed";
+import Story from "./Story";
 
 export default function Home() {
   return (
@@ -11,13 +12,14 @@ export default function Home() {
       <SideBar />
       <MainLayout>
         <ContentLayout>
-          <StotyContainer>
-            <div style={{ width: "60px", border: "1px solid red" }}>story</div>
-            <div style={{ width: "60px", border: "1px solid red" }}>story</div>
-            <div style={{ width: "60px", border: "1px solid red" }}>story</div>
-            <div style={{ width: "60px", border: "1px solid red" }}>story</div>
-            <div style={{ width: "60px", border: "1px solid red" }}>story</div>
-          </StotyContainer>
+          <StoryContainer>
+            <Story></Story>
+            <Story></Story>
+            <Story></Story>
+            <Story></Story>
+            <Story></Story>
+            <Story></Story>
+          </StoryContainer>
           <FeedContainer>
             <Feed />
             <Feed />
@@ -109,7 +111,6 @@ const ContentLayout = styled.div`
   flex-direction: column;
 
   width: 630px;
-  border: 1px solid blue;
   margin-left: auto;
   margin-right: 30px;
 `;
@@ -162,8 +163,7 @@ const MainLayout = styled.main`
   }
 `;
 
-const StotyContainer = styled.div`
-  border: 1px solid blue;
+const StoryContainer = styled.div`
   padding-top: 3px;
   padding-bottom: 3px;
   width: 100%;
@@ -174,8 +174,6 @@ const StotyContainer = styled.div`
 `;
 
 const FeedContainer = styled.div`
-  border: 1px solid blue;
-
   display: flex;
   flex-direction: column;
 `;

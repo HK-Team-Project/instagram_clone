@@ -27,7 +27,7 @@ export default function Feed() {
       <Like>
         <div>
           {like_list.map((like, index) => {
-            return <img key={index} src={like} className="like_profile"></img>;
+            return <img key={index} src={like}></img>;
           })}
         </div>
         <span>좋아요 개</span>
