@@ -9,9 +9,7 @@ function App() {
       path: "/",
       element: <Home />,
     },
-    { path: "/explore",
-      element: <Explore /> 
-    },
+    { path: "/explore", element: <Explore /> },
   ]);
 
   return <RouterProvider router={router} />;
